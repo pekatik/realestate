@@ -1,0 +1,12 @@
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\bin\Debug\RealEstateApplication.dll
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\bin\Debug\RealEstateApplication.pdb
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\obj\Debug\RealEstateApplication.csproj.CoreCompileInputs.cache
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\obj\Debug\RealEstateApplication.dll
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\obj\Debug\RealEstateApplication.pdb
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\bin\Debug\AutoMapper.dll
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\bin\Debug\RealEstateData.dll
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\bin\Debug\EntityFramework.dll
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\bin\Debug\RealEstateData.pdb
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\bin\Debug\AutoMapper.xml
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\bin\Debug\EntityFramework.xml
+C:\Users\Armagan\source\repos\RealEstate\RealEstateApplication\obj\Debug\RealEstateApplication.csprojResolveAssemblyReference.cache

@@ -1,0 +1,81 @@
+﻿@model RealEstate.Models.EstateModel
+
+@{
+    ViewBag.Title = "Emlak Ekle/Düzenle";
+    ViewBag.Description = "Aşağıdaki formu doldurarak emlak ekleyebilirsiniz/düzenleyebilirsiniz.";
+}
+
+@using (Html.BeginForm("Edit", "Estate", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="box box-danger">
+                <div class="box-header">
+                    <h3 class="box-title">Genel Özellikler</h3>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Başlık:</label>
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @id = "Title", @placeholder = "Başlık", maxlength = "100" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Fiyat:</label>
+                        <div class="input-group">
+                            @Html.TextBoxFor(x => x.Price, new { @class = "form-control", @id = "Price", @placeholder = "Fiyat", maxlength = "20" })
+                            <span class="input-group-addon">TL</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>İlan Tarihi:</label>
+                        <div class="input-group date">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            @Html.TextBoxFor(x => x.ReleaseDate, new { @class = "form-control pull-right datepicker", @id = "ReleaseDate" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">Resim</label>
+                        <input type="file" id="ImageFile" name="ImageFile">
+                        <p class="help-block">JPG formatında 1000x1000 px ebatında resim yükleyin.</p>
+                        @Html.HiddenFor(x => x.Image)
+                        @if (Model.Image != null)
+                        {
+                            <img src="@(Constants.UploadPath + Model.Image)" width="200" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">Detaylar</h3>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ölçüm:</label>
+                        <div class="input-group">
+                            @Html.TextBoxFor(x => x.Dimension, new { @class = "form-control", @id = "Dimension", @placeholder = "Ölçüm", maxlength = "5" })
+                            <span class="input-group-addon">m2</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Oda Sayısı:</label>
+                        @Html.TextBoxFor(x => x.RoomSize, new { @class = "form-control", @id = "RoomSize" })
+                    </div>
+                    <div class="form-group">
+                        <label>Açıklama</label>
+                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = "3", @placeholder = "Açıklama..." })
+                    </div>
+                </div>
+
+                @Html.HiddenFor(x => x.EstateId)
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

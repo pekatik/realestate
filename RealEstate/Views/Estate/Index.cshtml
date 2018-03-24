@@ -1,0 +1,49 @@
+﻿@model List<RealEstate.Models.EstateModel>
+
+@{
+    ViewBag.Title = "Emlak Listesi";
+    ViewBag.Description = "Tüm eklenen emlakların listesi";
+}
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Aşağıdaki tablodan görebilir ve işlem yapabilirsiniz.</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Başlık</th>
+                                <th>Fiyat</th>
+                                <th>Ölçü</th>
+                                <th>Oda Sayısı</th>
+                                <th>İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Title</td>
+                                    <td>@item.Price.ToString("n") TL</td>
+                                    <td>@item.Dimension m2</td>
+                                    <td>@item.RoomSize</td>
+                                    <td>
+                                        <a href="@Url.Action("Edit", new { id = item.EstateId })">Düzenle</a> 
+                                        /
+                                        <a href="@Url.Action("Delete", new { id = item.EstateId })">Sil</a>
+                                        
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
